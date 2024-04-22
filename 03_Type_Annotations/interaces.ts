@@ -34,8 +34,6 @@ printVehicle(oldCivic)
 // Interface -> creates a new type, describing the property names and value types
 // of an object
 
-
-
 interface Vehicle {
   name: string;
   year: Date;
