@@ -94,3 +94,8 @@ const myDrink = {
 };
 
 printSummary(myDrink)
+
+// In summary...
+// Genenral Strategy for Reusable Code in TypeScript (TS)
+//  - Create functions that accept arguments that are typed with interfaces
+//  - Object/classes can decide to 'implement' a given interface to work with a function
