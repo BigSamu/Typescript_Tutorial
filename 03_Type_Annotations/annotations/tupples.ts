@@ -23,7 +23,7 @@ const pepsi = ["brown", true, 40]; // Typescript Type -> (string | number | bool
 // Solution
 // Defining a type annotation specifically defining the data types in specific order
 // Here an array is convert into a tuple
-const coke: [string, boolean, number] = ['brown', true, 40] // Typescript Type -> [string, boolean, number]
+const coke: [string, boolean, number] = ["brown", true, 40]; // Typescript Type -> [string, boolean, number]
 
 // -----------------------------------------------------------------------------
 // II) Annotations for Tuples using Alias
@@ -33,19 +33,19 @@ const coke: [string, boolean, number] = ['brown', true, 40] // Typescript Type -
 type Drink = [string, boolean, number]; // This is NOT DEFINING an array!
 
 // Using Type Alias
-const otherPepsi: Drink = ['brown', true, 40];
-const sprite: Drink = ['clear', true, 40];
-const tea: Drink = ['brown', false, 0];
+const otherPepsi: Drink = ["brown", true, 40];
+const sprite: Drink = ["clear", true, 40];
+const tea: Drink = ["brown", false, 0];
 
 // NOTE: Tupleas are not very useful. Look example below
 
 // Problem
 // What represent the numbers below? We don't have a clue
-const carSpecs: [number, number] = [4000, 3354]
+const carSpecs: [number, number] = [4000, 3354];
 
 // Solution
 // Using object literals we can get more meaningful data
 const carStats = {
   horsePower: 400,
-  weight: 3354
-}
+  weight: 3354,
+};
