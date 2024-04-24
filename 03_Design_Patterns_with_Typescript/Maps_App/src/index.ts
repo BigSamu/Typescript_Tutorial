@@ -3,7 +3,17 @@ import { User } from "./User";
 import { Company } from "./Company";
 
 
-const user = new User();
-const customMap = new CustomMap('map');
+// Function to initialize the map and add markers
+async function initMapAndMarkers() {
+  const user = new User();
+  const customMap = new CustomMap('map');
 
-customMap.addUsermarker(user);
+  // Load Marker Library
+  await customMap.loadMarkerLibrary();
+
+  // Now add markers
+  customMap.addUsermarker(user);
+}
+
+// Call the initialization function
+initMapAndMarkers();
