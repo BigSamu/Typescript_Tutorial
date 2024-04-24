@@ -1,7 +1,13 @@
 /// <reference types="@types/google.maps" />  // <--Note: directive to reference the typefile
-import { User } from "./User";
-import { Company } from "./Company";
 
+export interface Mappable {
+  location: {
+    lat: number;
+    lng: Number;
+  };
+  markerContent(): string;
+  color: string;
+}
 export class CustomMap {
   private googleMap: google.maps.Map;
   private MarkerElement?: any;  // Use any or a specific type you expect
@@ -23,22 +29,27 @@ export class CustomMap {
     }
   }
 
-  addUsermarker(user: User): void {
+  addMarker(mappable: Mappable): void {
     if (!this.MarkerElement) {
       console.log('Marker library is not loaded yet.');
       return;
     }
 
-    new this.MarkerElement({
+    const marker = new this.MarkerElement({
       map: this.googleMap,
       position: {
-        lat: user.location.lat,
-        lng: user.location.lng
+        lat: mappable.location.lat,
+        lng: mappable.location.lng
       }
     });
+
+    marker.addListener('click', ()=> {
+      const infoWindow = new google.maps.InfoWindow({
+        content: mappable.markerContent()
+      });
+      infoWindow.open(this.googleMap, marker)
+    })
   }
 
-  addCompanyMarker(company: Company): void {
-    // Similarly ensure MarkerElement is loaded
-  }
+
 }
