@@ -2,8 +2,8 @@
   "users": [
     {
       "id": 1,
-      "name": "NEW NAME",
-      "age": 9999
+      "name": "newer name",
+      "age": 20
     },
     {
       "name": "new record",
@@ -64,6 +64,11 @@
       "name": "new record",
       "age": 0,
       "id": 13
+    },
+    {
+      "name": "NAME",
+      "age": 20,
+      "id": 14
     }
   ],
   "locals": []
